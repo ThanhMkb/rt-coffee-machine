@@ -1,3 +1,4 @@
+using RT_Coffee_Machine.Client;
 using RT_Coffee_Machine.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<ICountCoffeeService, CountCoffeeService>();
+builder.Services.AddHttpClient<OpenWeatherHttpClient>();
 
 var app = builder.Build();
 
